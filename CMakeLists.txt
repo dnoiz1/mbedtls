@@ -7,12 +7,14 @@ SET(CMAKE_SYSTEM_PROCESSOR arm-eabi)
 # export PATH=$PATH:~/iot/arduino-1.5.6-r2/hardware/tools/g++_arm_none_eabi/bin
 # export PATH=$PATH:~/arduino/arduino-nightly/tools/arm-none-eabi-gcc/4.8.3-2014q1/bin
 
-SET(CMAKE_C_COMPILER arm-none-eabi-gcc)
-SET(CMAKE_CXX_COMPILER arm-none-eabi-g++)
-SET(CMAKE_RANLIB arm-none-eabi-ranlib)
-SET(CMAKE_AR arm-none-eabi-ar)
-
 SET(HOME $ENV{HOME})
+
+SET(TOOLPATH ${HOME}/arduino/arduino-nightly/tools/arm-none-eabi-gcc/4.8.3-2014q1/bin)
+SET(CMAKE_C_COMPILER ${TOOLPATH}/arm-none-eabi-gcc)
+SET(CMAKE_CXX_COMPILER ${TOOLPATH}/arm-none-eabi-g++)
+SET(CMAKE_RANLIB ${TOOLPATH}/arm-none-eabi-ranlib)
+SET(CMAKE_AR ${TOOLPATH}/arm-none-eabi-ar)
+
 SET(ADIR ${HOME}/arduino/arduino-nightly)
 SET(SAM hardware/sam/1.6.4/)
 SET(CMSIS hardware/sam/1.6.4/system/CMSIS)
